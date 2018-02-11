@@ -9,32 +9,6 @@ result = {}
 with open('locations.list', mode = "r") as f:
     for line_number, line in enumerate(f.readlines()):
         if line_number > 13:
-            # elem = line.split()
-            #
-            # year = elem[1]
-            # year = year.replace('(', '').replace(')', '')
-            # try:
-            #     year = int(year)
-            # except ValueError:
-            #     year = year.replace('(', '').replace(')', '')
-            #     year = int(year)
-            #
-            # film_name = elem[0]
-            # film_name = film_name.replace("#", "").replace("'", "").replace("\"", "")
-            #
-            # film_location = " ".join(e for e in elem[2:])
-            # if "}" in film_location:
-            #     index = film_location.index("}")
-            #     film_location = film_location[index + 1:]
-            #
-            # if "(" in film_location:
-            #     index = film_location.index("(")
-            #     film_location = film_location[:index]
-            # film_location = film_location.lstrip()
-            # film_location = film_location.strip()
-            # film_location = geolocator.geocode(film_location)
-            # film_location = [film_location.latitude, film_location.longitude]
-
             # film name
             index_film_name_end = line.index("(")
             film_name = line[:index_film_name_end]
