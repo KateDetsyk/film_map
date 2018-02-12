@@ -61,7 +61,7 @@ for film_name in result[year_input]:
     for film_locations in result[year_input][film_name]:
         folium.Marker(film_locations, popup = film_name).add_to(m)
 
-#folium.LayerControl().add_to(m)
+folium.LayerControl().add_to(m)
 
 m.save('film_map.html')
 print("File film_map.html generated.")
