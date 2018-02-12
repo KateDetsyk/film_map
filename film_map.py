@@ -55,13 +55,17 @@ with open('locations.list', mode = "r") as f:
                     result[year] = {film_name: [film_location]}
 
 # map
-m = folium.Map(location=[30, 31], zoom_start=2)
+m = folium.Map(location=[30, 31], zoom_start = 2)
+folium.TileLayer('openstreetmap').add_to(m)
+folium.TileLayer('stamenterrain').add_to(m)
+folium.TileLayer('stamenwatercolor').add_to(m)
+folium.TileLayer('stamentoner').add_to(m)
+folium.TileLayer('cartodbpositron').add_to(m)
+folium.LayerControl().add_to(m)
 
 for film_name in result[year_input]:
     for film_locations in result[year_input][film_name]:
         folium.Marker(film_locations, popup = film_name).add_to(m)
-
-folium.LayerControl().add_to(m)
 
 m.save('film_map.html')
 print("File film_map.html generated.")
